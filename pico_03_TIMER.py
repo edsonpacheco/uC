@@ -9,7 +9,6 @@ timer = Timer(-1)
 def timer_callback(t):
     led.toggle()
     estado = "ON" if led.value() else "OFF"
-    # Removida a barra invertida (\) que causava erro no Python
     print("LED: %s" % estado)
 
 # Inicializa timer de 500ms
@@ -18,5 +17,4 @@ timer.init(period=500,
            callback=timer_callback)
 
 while True:
-    # idle() é mais estável para o console do simulador
     machine.idle()
