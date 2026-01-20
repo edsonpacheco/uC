@@ -9,7 +9,7 @@ def gpio_callback(pin):
     raw = sensor.read_u16()
     voltage = raw * 3.3 / 65535
     temp = voltage * 100.0
-    print(f"Leitura ADC: {raw} | Temp: {temp:.1f} C")
+    print(f"ADC: {raw} | T: {temp:.1f} C")
     led.value(temp > 30.0)
 
 # Configurando IRQ em Falling Edge
